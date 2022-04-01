@@ -27,7 +27,11 @@ WEB系の企業様
 コードや機能を参考にできる。
 
 ## 設計書
-<...>
+・ER図  
+https://app.diagrams.net/#G1S-ie8b26_ELzH5UyYD3ftYiJzuTN41mR  
+
+・テーブル定義書  
+
 
 ## 開発環境
 - OS：Linux(CentOS)
