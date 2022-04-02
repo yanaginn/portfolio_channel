@@ -28,11 +28,9 @@ WEB系の企業様
 
 ## 設計書
 ・ER図
-
 https://app.diagrams.net/#G1S-ie8b26_ELzH5UyYD3ftYiJzuTN41mR
 
 ・テーブル定義書
-
 https://docs.google.com/spreadsheets/d/1cJej8LWUxHr9wSUUFD2gohzz6rBoIpBcYbCJpPba7DQ/edit#gid=856357510
 
 
