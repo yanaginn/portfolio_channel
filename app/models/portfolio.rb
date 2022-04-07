@@ -1,0 +1,10 @@
+class Portfolio < ApplicationRecord
+  attachment :image
+  belongs_to :user
+
+  with_options presence: ture do
+    validates :title
+    validates :body
+    validates :image
+  end
+end

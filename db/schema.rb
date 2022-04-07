@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_141318) do
+ActiveRecord::Schema.define(version: 2022_04_07_055116) do
+
+  create_table "portfolios", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.text "body"
+    t.string "image_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -19,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_04_03_141318) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "username"
-    t.text "pofile"
-    t.string "pofile_image_id"
+    t.text "profile"
+    t.string "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

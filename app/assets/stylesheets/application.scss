@@ -24,3 +24,25 @@
 .notification:not(:last-child){
         margin-bottom: 0;
 }
+
+.profile_image {
+ border-radius: 50%;
+}
+
+.main-image {
+	height: 940px;
+	background-image: url(meal.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.background_test {
+    background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  font-family: sans-serif;
+}
