@@ -21,6 +21,19 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+    @portfolio = Portfolio.find(params[:id])
+    if @portfolio.user != current_user
+      redirect_to portfolios_path, alert: "不正なアクセスです。"
+    end
+  end
+
+  def update
+    @portfolio = Portfolio.find(params[:id])
+    if @portfolio.update(portfolio_params)
+      redirect_to portfolio_path(@portfolio), notice: "ポートフォリオを更新しました。"
+    else
+      render :edit
+    end
   end
 
   private
