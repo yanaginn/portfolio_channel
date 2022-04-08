@@ -11,7 +11,8 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = current_user.portfolios.build(portfolio_params)
+    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio.user_id = current_user.id
     if @portfolio.save
       redirect_to portfolio_path(@portfolio), notice: "ポートフォリオを投稿しました。"
     else
@@ -20,5 +21,10 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+  end
+
+  private
+  def portfolio_params
+    params.require(:portfolio).permit(:title, :body, :image, :comment)
   end
 end

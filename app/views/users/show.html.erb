@@ -57,7 +57,7 @@
             <div class="card-image">
               <figure class="image is-4by3">
                 <%= link_to portfolio_path(portfolio) do %>
-                  <%= attachment_image_tag portfolio, fallback: "no-image.png" %>
+                  <%= attachment_image_tag portfolio, :image, fallback: "no-image.png" %>
                 <% end %>
               </figure>
             </div>
