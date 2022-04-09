@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+  has_many :reviews, dependent: :destroy
   attachment :image
   belongs_to :user
 

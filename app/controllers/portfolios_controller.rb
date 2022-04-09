@@ -1,10 +1,12 @@
 class PortfoliosController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @portfolios = Portfolio.all
   end
 
   def show
     @portfolio = Portfolio.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -35,6 +37,12 @@ class PortfoliosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    portfolio = Portfolio.find(params[:id])
+    portfolio.destroy
+    redirect_to user_path(portfolio.user), notice: "ポートフォリオを削除しました。"
   end
 
   private
