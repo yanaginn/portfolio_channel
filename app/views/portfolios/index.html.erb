@@ -33,6 +33,28 @@
                 </div>
               </div>
 
+              <div class="card-content">
+                <div class="content">
+                  <div class="content average-score">
+                    <div class="star-rating mb-2">
+                      <div class="star-rating-front" style="width: <%= portfolio.review_score_percentage %>%">★★★★★</div>
+                      <div class="star-rating-back">★★★★★</div>
+                    </div>
+                    <div class="average-score-display ml-3 pt-2">
+                      <%= portfolio.avg_score %>点（<%= portfolio.reviews.count %>件のレビュー）
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="card-footer">
+                <%= link_to portfolio_reviews_path(portfolio), class: "button card-footer-item" do %>
+                  レビューを見る
+                <% end %>
+                <%= link_to portfolio_path(portfolio), class: "button card-footer-item" do %>
+                  レビューを書く
+                <% end %>
+              </footer>
+
               <div class="content">
                 <time><%= portfolio.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
               </div>

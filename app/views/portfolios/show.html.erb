@@ -33,10 +33,22 @@
                   <td><%= simple_format @portfolio.body %></td>
                 </tr>
               </table>
+              <div class="card-content">
+                <div class="content average-score">
+                  <div class="star-rating mb-2">
+                    <div class="star-rating-front" style="width: <%= @portfolio.review_score_percentage %>%">★★★★★</div>
+                      <div class="star-rating-back">★★★★★</div>
+                  </div>
+                  <div class="average-score-display ml-3 pt-2">
+                    <%= @portfolio.avg_score %>点（<%= @portfolio.reviews.count %>件のレビュー）
+                  </div>
+                </div>
+              </div>
               <% if @portfolio.user.id == current_user.id %>
                 <%= link_to "編集画面へ", edit_portfolio_path(@portfolio), class: "button is-success" %>
               <% end %>
             </div>
+            <%= render 'reviews/form', review: @review, portfolio: @portfolio %>
           </div>
         </div>
       </div>
