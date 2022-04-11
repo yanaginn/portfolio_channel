@@ -24,4 +24,16 @@ class Portfolio < ApplicationRecord
       0.0
     end
   end
+
+  def self.search_for(content, method)
+      if method == 'perfect'
+        Portfolio.where(title: content)
+      elsif method == 'forward'
+        Portfolio.where('title LIKE ?', content+'%')
+      elsif method == 'backward'
+        Portfolio.where('title LIKE ?', '%'+content)
+      else
+        Portfolio.where('title LIKE ?', '%'+content+'%')
+      end
+  end
 end
