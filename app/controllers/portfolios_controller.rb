@@ -16,9 +16,12 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio = Portfolio.new(portfolio_params)
     @portfolio.user_id = current_user.id
+    tag_list = params[:portfolio][:tag_name].split(',')
     if @portfolio.save
+      @portfolio.save_tags(tag_list)
       redirect_to portfolio_path(@portfolio), notice: "ポートフォリオを投稿しました。"
     else
+      @portfolios = Portfolio.all
       render :new
     end
   end
@@ -32,7 +35,9 @@ class PortfoliosController < ApplicationController
 
   def update
     @portfolio = Portfolio.find(params[:id])
+    tag_list = params[:portfolio][:tag_name].split(',')
     if @portfolio.update(portfolio_params)
+      @portfolio.save_tags(tag_list)
       redirect_to portfolio_path(@portfolio), notice: "ポートフォリオを更新しました。"
     else
       render :edit

@@ -32,6 +32,16 @@
                 <tr>
                   <td><%= simple_format @portfolio.body %></td>
                 </tr>
+                <tr>
+                  <th>カテゴリー</th>
+                </tr>
+                <tr>
+                  <td>
+                    <% @portfolio.tags.each do |tag| %>
+                      <li style="list-style: none;"><%= link_to tag.name, search_path(content: tag.name, model:"tag", method: "perfect") %></li>
+                    <% end %>
+                  </td>
+                </tr>
               </table>
               <div class="card-content">
                 <div class="content average-score">
