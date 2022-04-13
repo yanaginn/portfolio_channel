@@ -7,6 +7,13 @@ class User < ApplicationRecord
   has_many :portfolios, dependent: :destroy
   attachment :profile_image
 
+  def self.guest
+    find_or_create_by!(username: 'guestuser' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = "guestuser"
+    end
+  end
+
   def self.search_for(content, method)
     if method == 'perfect'
       User.where(username: content)

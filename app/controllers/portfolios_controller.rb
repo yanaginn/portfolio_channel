@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.all.order(id: "DESC")
   end
 
   def show
