@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_12_024148) do
+ActiveRecord::Schema.define(version: 2022_04_14_045230) do
 
   create_table "portfolio_tags", force: :cascade do |t|
     t.integer "portfolio_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_04_12_024148) do
     t.string "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -32,6 +32,9 @@
               <div class="content">
                 投稿数:<%= user.portfolios.count %>
               </div>
+              <% if current_user.admin? %>
+                 <%= link_to "管理者用削除", user_path(user), method: :delete %>
+              <% end %>
             </div>
           </div>
         </div>
