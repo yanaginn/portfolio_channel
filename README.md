@@ -46,6 +46,10 @@ https://app.diagrams.net/#G1S-ie8b26_ELzH5UyYD3ftYiJzuTN41mR
 <br>
 https://docs.google.com/spreadsheets/d/1cJej8LWUxHr9wSUUFD2gohzz6rBoIpBcYbCJpPba7DQ/edit#gid=856357510
 
+・テスト仕様書
+<br>
+https://docs.google.com/spreadsheets/d/1_dfWCPtQBOpfxWyQNJFCaZLn2SV25CqD/edit#gid=1416532430
+
 
 ## 開発環境
 - OS：Linux(CentOS)
