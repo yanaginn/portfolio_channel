@@ -63,6 +63,6 @@ https://docs.google.com/spreadsheets/d/1_dfWCPtQBOpfxWyQNJFCaZLn2SV25CqD/edit#gi
 <br>
 https://www.pexels.com/ja-jp/
 
-いらすとや
+・いらすとや
 <br>
 https://www.irasutoya.com/
